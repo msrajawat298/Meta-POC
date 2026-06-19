@@ -2,6 +2,7 @@
 - [Decode Time](https://dencode.com/en/date)
 - [Meta Graph API Explorer](https://developers.facebook.com/tools/explorer/)
 - [Long-Lived Access Tokens](https://developers.facebook.com/documentation/facebook-login/guides/access-tokens/get-long-lived#generate-long-lived-token)
+- [Postman Collecations](https://documenter.getpostman.com/view/21993237/2sBXwvJoC7)
 
 - Issue Date of Token : Wed Jun 17 16:08:12 2026
 - Expires : Sun Aug 16 16:08:12 2026
