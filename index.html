@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unix Timestamp Converter</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background:#1e1e1e;
+            color:#fff;
+        }
+
+        .result-box{
+            background:#2d2d2d;
+            padding:15px;
+            border-radius:8px;
+            margin-bottom:10px;
+        }
+
+        .label{
+            color:#aaa;
+            font-weight:600;
+        }
+
+        .value{
+            color:#fff;
+            word-break: break-word;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container py-5">
+
+    <h2 class="mb-4">Unix Timestamp Converter</h2>
+
+    <div class="card bg-dark border-secondary">
+        <div class="card-body">
+
+            <label class="form-label">
+                Unix Timestamp (Seconds)
+            </label>
+
+            <input
+                type="number"
+                id="timestamp"
+                class="form-control form-control-lg"
+                value="1782128282"
+            >
+
+            <button
+                class="btn btn-primary mt-3"
+                onclick="convertTimestamp()">
+                Convert
+            </button>
+
+        </div>
+    </div>
+
+    <div class="mt-4">
+
+        <div class="result-box">
+            <div class="label">Unix Time</div>
+            <div class="value" id="unix"></div>
+        </div>
+
+        <div class="result-box">
+            <div class="label">ISO 8601</div>
+            <div class="value" id="iso"></div>
+        </div>
+
+        <div class="result-box">
+            <div class="label">UTC String</div>
+            <div class="value" id="utc"></div>
+        </div>
+
+        <div class="result-box">
+            <div class="label">RFC 2822</div>
+            <div class="value" id="rfc"></div>
+        </div>
+
+        <div class="result-box">
+            <div class="label">Local Date</div>
+            <div class="value" id="local"></div>
+        </div>
+
+        <div class="result-box">
+            <div class="label">Locale String</div>
+            <div class="value" id="locale"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function convertTimestamp() {
+
+    const timestamp =
+        parseInt(document.getElementById('timestamp').value);
+
+    if (!timestamp) {
+        alert('Enter valid timestamp');
+        return;
+    }
+
+    const date = new Date(timestamp * 1000);
+
+    document.getElementById('unix').innerText =
+        timestamp;
+
+    document.getElementById('iso').innerText =
+        date.toISOString();
+
+    document.getElementById('utc').innerText =
+        date.toUTCString();
+
+    document.getElementById('rfc').innerText =
+        date.toString();
+
+    document.getElementById('local').innerText =
+        date.toLocaleDateString();
+
+    document.getElementById('locale').innerText =
+        date.toLocaleString();
+}
+
+convertTimestamp();
+</script>
+
+</body>
+</html>
